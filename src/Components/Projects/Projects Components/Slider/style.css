@@ -1,0 +1,125 @@
+.slider {
+    background: #f9f5f2;
+    padding: 80px 0;
+}
+
+.slider .slider-content {
+    position: relative;
+    width: 70%;
+    height: 350px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 11px 21px #d4d8e4;
+}
+
+.slider article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    background: violet;
+    opacity: 0;
+}
+
+.slider .activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slider .lastSlide {
+    transform: translateX(-100%);
+}
+
+.slider .nextSlide {
+    transform: translateX(100%);
+}
+
+.slider article .img-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slider article .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider article .txt-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: #00000070;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider article .txt-box .txt-content {
+    position: absolute;
+    width: 60%;
+    height: fit-content;
+}
+
+.slider article .txt-box p {
+    color: #d4d8e4;
+}
+
+.slider article .txt-box h4 {
+    margin: 0;
+    color: rgb(133, 255, 51);
+}
+
+.slider article .txt-box p {
+    margin: 5px;
+}
+
+.slider .slider-content .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.slider .slider-content .control button{
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    border: none;
+    font-size: 40px;
+    color: #f9f5f2;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.slider .slider-content .control .prev {
+    left: 0;
+    background: linear-gradient(90deg, rgba(13, 1, 77, 0.322), transparent);
+}
+
+.slider .slider-content .control .next {
+    right: 0;
+    background: linear-gradient(-90deg, rgba(13, 1, 77, 0.322), transparent);
+}
+
+.slider .slider-content .control .prev:hover {
+    background: linear-gradient(90deg, rgba(6, 2, 31, 0.322), transparent);
+}
+
+.slider .slider-content .control .next:hover {
+    background: linear-gradient(-90deg, rgba(6, 2, 31, 0.322), transparent);
+}

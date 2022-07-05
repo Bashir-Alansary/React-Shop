@@ -1,0 +1,245 @@
+.stripe {
+    position: relative;
+    padding: 70px 40px;
+    background: #fbf8f3;
+}
+
+.stripe .stripe-nav {
+    height: 65px;
+}
+
+.stripe-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.stripe-nav .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.stripe-nav .toggle-btn {
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: #1f2278;
+    cursor: pointer;
+    display: none;
+    transition: 0.6s;
+}
+
+.stripe-nav .toggle-btn:hover {
+    transform: scale(1.2);
+}
+
+.stripe-nav .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+
+.stripe-nav .links li .link-btn {
+    background: none;
+    border: none;
+    font-size: 17px;
+    padding: 23px 31px;
+    color: #1f2278;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.stripe-nav .sign-btn {
+    cursor: pointer;
+    padding: 14px 32px;
+    background: #5559ce;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.stripe .hero {
+    height: 800px;
+    padding-top: 150px;
+    background: url('../../../../../public/images/Projects\ images/StripeImages/header-bg.jpg');
+    margin-top: -100px;
+}
+
+.hero .container {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.hero .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .content .info,
+.hero .content .img-box {
+    width: 45%;
+}
+
+.hero .content .img-box img {
+    width: 100%;
+}
+
+.hero .info h3 {
+    font-size: 22px;
+    color: #5559ce;
+    width: fit-content;
+    background: url('../../../../../public/images/Projects\ images/StripeImages/header-h3.png');
+}
+
+.hero .info h2 {
+    font-size: 40px;
+    color: #1f2278;
+    margin-top: 0;
+}
+
+.stripe .stripe-sidebar {
+    display: none;
+}
+
+.stripe .submenu {
+    position: absolute;
+    top: 135px;
+    background: #fff;
+    box-shadow: 0 1px 40px 0 rgb(0 0 0 / 10%);
+    height: fit-content;
+    width: 250px;
+    padding: 25px;
+    transition: 0.5s;
+    display: none;
+}
+
+.stripe .submenu-active {
+    display: block;
+}
+
+.stripe .submenu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 115px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #babadf;
+}
+
+.stripe .submenu h4 {
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #1f2278;
+    border-bottom: 1px solid rgb(247, 232, 232);
+}
+
+.stripe .submenu .submenu-links {
+    list-style: none;
+    padding: 0;
+}
+
+.stripe .submenu .submenu-links li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #666;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 800px) {
+    .stripe {
+        padding: 70px 0;
+    }
+
+    .stripe-nav .nav-header {
+        width: 100%;
+    }
+
+    .stripe-nav .toggle-btn {
+        display: block;
+    }
+
+    .stripe-nav .links {
+        display: none;
+    }
+
+    .stripe-nav .sign-content {
+        display: none;
+    } 
+
+    .stripe .hero .img-box {
+        width: 100%;
+    }
+
+    .stripe .hero .info {
+        display: none;
+    }
+
+    .stripe .stripe-sidebar {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(22, 71, 92, 0.274);
+        transition: 0.8s;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .stripe .stripe-sidebar.siderbar-active {
+        height: 70%;
+    }
+
+    .stripe .stripe-sidebar .close-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: none;
+        color: red;
+        font-size: 24px;
+        border: none;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+
+    .stripe .stripe-sidebar .close-btn:hover {
+        transform: scale(1.2);
+    }
+
+    .stripe .stripe-sidebar .container {
+        height: 97%;
+        width: 95%;
+        background: rgb(229, 246, 253);
+        padding: 30px;
+    }
+
+    .stripe .stripe-sidebar .sidebar-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .stripe .stripe-sidebar .sidebar-links li {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .stripe .stripe-sidebar .sidebar-links li a {
+        text-decoration: none;
+        color: #1f2278;
+    }
+}
