@@ -1,0 +1,451 @@
+import img1 from "./images/item1.jpg"
+import img2 from "./images/item2.jpg"
+import img3 from "./images/item3.jpg"
+import img4 from "./images/item4.jpg"
+import img5 from "./images/item5.jpg"
+import img6_1 from "./images/item6_1.jpg"
+import img6_2 from "./images/item6_2.jpg"
+import img6_3 from "./images/item6_3.jpg"
+import img6_4 from "./images/item6_4.jpg"
+import img7 from "./images/item7.jpg"
+import img8 from "./images/item8.jpg"
+import img9 from "./images/item9.jpg"
+import img10 from "./images/item10.jpg"
+import img11 from "./images/item11.jpg"
+
+let all_product = [
+  {
+    id: 1,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img1,
+    newPrice: 50.0,
+    oldPrice: 80.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 2,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img2,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img2, img3, img4, img5],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting",
+  },
+  {
+    id: 3,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img3,
+    newPrice: 60.0,
+    oldPrice: 100.5,
+    imgs: [img3, img4, img5, img6_1],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 4,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img4,
+    newPrice: 100.0,
+    oldPrice: 150.0,
+    imgs: [img4, img5, img6_1, img7],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 5,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img5,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img5, img6_1, img7, img8],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 6,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img6_1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img6_1, img6_2, img6_3, img6_4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 7,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img7,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img7, img8, img9, img10],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 8,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img8,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img8, img9, img10, img11],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 9,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img: img9,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img9, img10, img11, img1],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 10,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img:  img10,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img10, img11, img5, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 11,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img:  img11,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img11, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 12,
+    name: "Striped Flutter Sleeve",
+    category: "women",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting",
+  },
+  {
+    id: 13,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 14,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 15,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 16,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 17,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 18,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 19,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 20,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img: ".../../../images/sitem1.jpg",
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 21,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 22,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 23,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 24,
+    name: "Men Green Solid Zippered",
+    category: "men",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 25,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 26,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 27,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 28,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 29,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 30,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 31,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 32,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 33,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 34,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 35,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+  {
+    id: 36,
+    name: "Boys Orange Colourblocked",
+    category: "kids",
+    img:  img1,
+    newPrice: 85.0,
+    oldPrice: 120.5,
+    imgs: [img1, img2, img3, img4],
+    sizes: ["S", "M", "L", "ML", "XL", "XXL"],
+    tags: ["boys", "clothes", "brands", "shirt"],
+    desc: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. decorative lighting"
+  },
+];
+
+export default all_product;

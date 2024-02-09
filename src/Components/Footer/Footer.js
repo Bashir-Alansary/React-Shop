@@ -1,26 +1,47 @@
-import React, { useState } from 'react'
-import FooterInfo from './FooterInfo';
-import FooterProjects from './FooterProjects';
-import { footerProjects, footerInfo } from '../../Data/footerData';
-import "./style.css";
-import FooterLogo from './FooterLogo';
+import React from 'react'
+import { Link } from 'react-router-dom';
+import { footerIconsData, footerLinksData } from '../Assets/footerData'
+import "./Footer.css"
 
-function Footer() {
-  const[projects, setProjects] = useState(footerProjects);
-  const[infoList, setInfoList] = useState(footerInfo);
+export default function Footer() {
   return (
     <div className='footer'>
-        <div className='overlay'>
-            <div className='container'>
-                <div className='content'>
-                 <FooterProjects projects={projects} />
-                  <FooterLogo />
-                  <FooterInfo infoList = {infoList} />
+        <div className='container'>
+            <div className='content'>
+                <div className='footer-logo'>
+                    <img src='images/logo.png' />
                 </div>
+                <ul className='footer-links'>
+                    {
+                        footerLinksData.map(item=>{
+                            const{id, name, link} = item;
+                            return(
+                                <li key={id}>
+                                    <Link to={link} >{name}</Link>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+                <ul className='footer-icons'>
+                    {
+                        footerIconsData.map(item=>{
+                            const{id, icon, link} = item;
+                            return(
+                                <li key={id}>
+                                    <a href={link} >
+                                        <img src={icon} />
+                                    </a>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         </div>
+        {
+            //<div className='blur-color'></div>
+        }
     </div>
   )
 }
-
-export default Footer;
