@@ -54,10 +54,12 @@
 
 .subcart .subcart-item .item-amount {
     color: #888;
+    margin-right: 10px;
 }
 
 .subcart .subcart-item .item-price {
     font-weight: bold;
+    margin-left: 30px;
 }
 
 .subcart .subcart-item {

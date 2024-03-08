@@ -24,10 +24,11 @@ export default function Navbar() {
             </div>
             <div className='main-links'>
                 <ul className='links'>
-                    <li><NavLink className="link" to="/" activeClassName = "active" >Shop</NavLink></li>
+                    <li><NavLink className="link" to="/" activeClassName = "active" >Home</NavLink></li>
                     <li><NavLink className="link" to="men">Men</NavLink></li>
                     <li><NavLink className="link" to="women">Women</NavLink></li>
                     <li><NavLink className="link" to="kids">Kids</NavLink></li>
+                    <li><NavLink className="link" to="shop">Shop</NavLink></li>
                 </ul>
                 <div className='tamplates-link' onMouseEnter={()=>setShowTemplates(true)} onMouseLeave={()=>setShowTemplates(false)}>
                     <div className='btn-content'>

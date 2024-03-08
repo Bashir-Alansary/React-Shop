@@ -4,6 +4,9 @@ import { reviews } from './../components/ProductAbout/ProductReviews/ProductRevi
 
 export const ShopContext = createContext();
 
+const colors =  [...new Set(all_product.map(item => item.color))];
+const productTypes =  [...new Set(all_product.map(item => item.type))];
+
 const getDefaultCart = () => {
     let cart = {};
     for (let i = 0; i < all_product.length; i++) {
@@ -12,9 +15,9 @@ const getDefaultCart = () => {
     return cart;
 }
 
-
 export const ShopContextProvider = ({children}) => {
 
+    const[products, setProducts] = useState(all_product);
     const[cartItems, setCartItems] = useState(getDefaultCart());
     const[addedAmount, setAddedAmount] = useState(1);
     const[addedMsg, setAddedMsg] = useState({text: "10 in stock", class: "msg done", availablity: true});
@@ -104,10 +107,11 @@ export const ShopContextProvider = ({children}) => {
         }
         return amount;
     }
-
+    
     const contextValue =
     {
         all_product,
+        products,
         cartItems,
         increaseItemAmount,
         decreseItemAmount,
@@ -137,6 +141,9 @@ export const ShopContextProvider = ({children}) => {
         addToCompareList,
         removeFromCompareList,
         getCompareListAmount,
+        colors,
+        productTypes,
+        setProducts,
     };
 
     return(

@@ -1,12 +1,33 @@
 import React, {useState} from 'react'
 import "./ProductDetails.css"
 import { IoMdStar, IoMdStarHalf } from "react-icons/io";
+import { Link } from 'react-router-dom'
+import { DiGitCompare } from "react-icons/di";
+import { FiHeart, FiShare2 } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
+import { MdDoneOutline } from "react-icons/md";
 import { useShopContext } from '../../Context/ShopContext';
+import {paymentMethods} from "./ProductDetailsData"
 
 export default function ProductDetails({product}) {
   
-  const {id, name, category, newPrice, oldPrice, sizes, tags} = product;
-  const {addedAmount, setAddedAmount, addAddedAmount, addedMsg, setAddedMsg, disabledBtn, setDisabledBtn} = useShopContext();
+  const {id, name, category, desc, newPrice, oldPrice, sizes} = product;
+
+  const {
+    addedAmount, 
+    setAddedAmount, 
+    addAddedAmount, 
+    addedMsg, 
+    setAddedMsg, 
+    disabledBtn, 
+    setDisabledBtn, 
+    wishlist, 
+    addToWishlist,
+    compareList,
+    addToCompareList,
+  } = useShopContext();
+
+  const [size, setSize] = useState(sizes[0]);
 
   const decreaseAddedAmount = () => {
     if (addedAmount > 1) {
@@ -16,14 +37,21 @@ export default function ProductDetails({product}) {
     }
   }
 
-  const checkAvailableSize = (index) => {
-    if (index === 0) {
+  const checkAvailableSize = (index, item) => {
+    if (index === 0 || index === 1) {
       setAddedMsg({text: "10 in stock", class: "msg done", availablity: true});
       setDisabledBtn(false);
     } else {
       setAddedMsg({text: "sold Out", class: "msg warning", availablity: true});
       setDisabledBtn(true);
     }
+    setSize(item);
+  }
+
+  const shareOnFacebook = () =>{
+    const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' +
+     'https://github.com/knoldus/angular-facebook-twitter.git';
+    window.open(navUrl , '_blank');
   }
 
   return (
@@ -44,16 +72,19 @@ export default function ProductDetails({product}) {
         <span className='old-price price'>{oldPrice}$</span>
       </div>
       <div className='info'>
-        <p>
-          Captivate with this shirt’s versatile urban look that works as well at happy hour as it does in the back yard.
-          The real mother of pearl buttons and embroidered crocodile...
-        </p>
+        <p>{desc}</p>
       </div>
+      
       <ul className='sizes'>
         {
-          sizes.map((size, index) => {
+          sizes.map((item, index) => {
             return(
-                <button key={index}className = "size" onClick={()=>checkAvailableSize(index)} >{size}</button>
+                <button 
+                key={index}
+                className = {item === size ? "size active" : "size"}
+                onClick={()=>checkAvailableSize(index, item)} >
+                {item} 
+                </button>
             )
           })
         }
@@ -69,22 +100,55 @@ export default function ProductDetails({product}) {
               <button onClick={decreaseAddedAmount}>-</button>
             </div>
           </div>
-          <button className={disabledBtn? 'add disabled' : 'add'} disabled={disabledBtn ? true : false} onClick={()=>addAddedAmount(id)}>{disabledBtn ? "sold out" : 'add'}</button>
+          <button 
+          className={disabledBtn? 'add disabled' : 'add'} 
+          disabled={disabledBtn ? true : false} 
+          onClick={()=>addAddedAmount(id)}>{disabledBtn ? "sold out" : 'add'}
+          </button>
         </div>
-        <p className={addedMsg.class}>{addedMsg.availablity && <b>Availabilty: </b>}<span>{addedMsg.text}</span></p>
+        <p className={addedMsg.class}>
+          {addedMsg.availablity && <b>Availabilty: </b>}<span>{addedMsg.text}</span>
+        </p>
       </div>
-      <div className='tags'>
-        <h3>tags:</h3>
-        <ul className='tags-links'>
-          {
-            tags.map(tag => {
-              return(
-                <li className='tag-link' key={Math.random()}>{tag},</li>
-              )
-            })
-          }
-        </ul>
+      <hr />
+      <div className='interact'>
+        <div className='box'>
+          {wishlist[id] === "favorite"?
+          <Link to="/wishlist" className="link icon-btn">
+            <FaHeart /> <span className='title'>View wishlist</span>
+          </Link>
+          :<button onClick={()=>{addToWishlist(id)}} className='icon-btn'>
+            <FiHeart /> <span className='title'>Add to wishlist</span>
+          </button>}
+        </div>
+        <div className='box'>
+          {compareList[id] === "compare"? 
+          <Link to="/compare" className="link icon-btn">
+            <MdDoneOutline /> <span className='title'>View compare list</span>
+          </Link>
+          :<button onClick={()=>{addToCompareList(id)}} className='icon-btn'>
+            <DiGitCompare /> <span className='title'>Add to compare</span>
+          </button>}
+        </div>
+        <div className='box'>
+          <button onClick={shareOnFacebook} className='icon-btn'>
+            <FiShare2 /> <span className='title'>Share</span>
+          </button>
+        </div>
       </div>
+      <hr />
+      <ul className='payment-methods'>
+        {
+          paymentMethods.map(method => {
+            const {id, name, img} = method;
+            return (
+              <li key={id} className="method">
+                <img src={img} alt={name} />
+              </li>
+            )
+          }) 
+        }
+      </ul>
     </div>
   )
 }

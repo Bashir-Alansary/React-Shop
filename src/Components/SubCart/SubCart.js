@@ -5,7 +5,17 @@ import { Link } from 'react-router-dom';
 import "./SubCart.css"
 
 export default function SubCart() {
-    const{showSubCart, setShowSubCart, all_product, cartItems, removeFromCart, getCartTotal, getCartAmount} = useShopContext();
+
+    const{
+        showSubCart, 
+        setShowSubCart, 
+        all_product, 
+        cartItems, 
+        removeFromCart, 
+        getCartTotal, 
+        getCartAmount,
+    } = useShopContext();
+
   return (
     <div className={showSubCart? "subcart show" : "subcart hide"}>
         <div className='title'>
@@ -28,8 +38,7 @@ export default function SubCart() {
                                     </Link>
                                     <div className='details'>
                                         <Link className='link' to={"/product/"+ id}><h6>{name}</h6></Link>
-                                        <span className='item-amount'>{cartItems[id]} x </span>
-                                        <span className='item-price'>{newPrice} $</span>
+                                        <span className='item-price'>{cartItems[id]} x {newPrice} $</span>
                                     </div>
                                     <div className='remove'>
                                         <button onClick={()=>removeFromCart(id)}><IoCloseSharp /></button>

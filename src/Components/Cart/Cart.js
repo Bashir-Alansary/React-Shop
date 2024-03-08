@@ -38,7 +38,7 @@ export default function Cart() {
             {
               all_product.map(item => {
                 if (cartItems[item.id] > 0) {
-                  const {id, img, name, newPrice} = item;
+                  const {id, img, name, newPrice, sizes} = item;
                   const quantity = cartItems[id];
                   const typeTotal = cartItems[id] * newPrice;
                   return(
